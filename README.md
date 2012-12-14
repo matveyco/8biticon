@@ -11,21 +11,22 @@ However, from bootstrap you can attach only things related to Carousel and Trans
 
 #### Attention
 You will need patched version of bootsrap-carousel.js.
-You can find patched version in 8bit-client/js/ or use 8bit-client/js/bootstrap-carousel.patch file to create your own.
+You can find patched version in 8bit-client/external/bootstrap/ or use 8bit-client/external/bootstrap/bootstrap-carousel.patch file to create your own.
 
 ```html
+<!-- jQuery -->
+<script src="8bit-client/external/jquery-1.8.3.min.js"></script>
+<!-- 8biticon uses waitForImages script by Alex Dickson -->
+<script src="8bit-client/external/waitForImages.js"></script>
 <!-- twitter bootstrap related -->
-<link type="text/css" href="8bit-client/css/8biticon.css" rel="stylesheet" />
-<script src="8bit-client/js/bootstrap-carousel.patched.js"></script>
-<script src="8bit-client/js/bootstrap-transition.js"></script>
+<link href="8bit-client/external/bootstrap/bootstrap-carousel.css" type="text/css" rel="stylesheet" />
+<script src="8bit-client/external/bootstrap/bootstrap-carousel.patched.js"></script>
+<script src="8bit-client/external/bootstrap/bootstrap-transition.js"></script>
 ```
 
 ```html
-<!-- 8biticon mandatory css file -->
-<link type="text/css" href="8bit-client/css/8biticon.css" rel="stylesheet" />
-
-<!-- 8biticon uses waitForImages script by Alex Dickson -->
-<script src="8bit-client/js/waitForImages.js"></script>
+<!-- 8biticon mandatory css and js files -->
+<link href="8bit-client/css/8biticon.css" type="text/css" rel="stylesheet" />
 <script src="8bit-client/js/8biticon.js"></script>
 ```
 
