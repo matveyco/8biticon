@@ -3,10 +3,9 @@
 
 Pixel art picture generator. Create your own funny profile pics!
 
-How to use?
-========
+#How to use?
 
-<a href="http://twitter.github.com/bootstrap/index.html">Twitter Bootstrap</a> is required.
+<a href="http://jquery.com/">jQuery</a> and <a href="http://twitter.github.com/bootstrap/index.html">Twitter Bootstrap</a> are required.
 
 However, you can attach only things related to Carousel and Transition plugins (these files can be found along with others in 8bit-client folder).
 
