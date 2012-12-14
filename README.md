@@ -14,13 +14,13 @@ Pixel art picture generator. Create your own funny profile pics!
 
 ### Groups
 ```html
-<a href="javascript://" class="group-control" data-group="myGroup">Group Name</a> <!-- [data-group] is the name of any group
+<a href="javascript://" class="group-control" data-group="myGroup">Group Name</a> <!-- [data-group] contains the name of any group
 ```
 To change group 
 
 ### Navigation links
 ```html
-<a href="javascript://" class="layer-control" data-direction="prev">Go back</a> <!-- [data-direction] is either "prev" or "next" -->
+<a href="javascript://" class="layer-control" data-direction="prev">Go back</a> <!-- [data-direction] contains either "prev" or "next" -->
 ```
 
 ### Generate random picture link
