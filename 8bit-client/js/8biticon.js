@@ -406,11 +406,13 @@
 				$this.waitForImages(function () {
 					options.onLoaded.call(self, groups);
 
-					if (options.startup.group in options.json) {
+					if (options.startup.group &&
+						options.startup.group in options.json) {
 						openGroup(options.startup.group);
 					}
 
-					if (options.startup.layer in hash_layers) {
+					if (options.startup.layer &&
+						options.startup.layer in hash_layers) {
 						openLayer(options.startup.layer);
 					}
 				}, options.onLoading);
@@ -421,13 +423,14 @@
 	$.fn.pixel.defaults = {
 		json: null,
 		images: null,
-		selected: {},
+		selected: true,
 		ext: '.png',
 		zIndex: 1,
 		onLoaded: $.noop,
 		onLoading: $.noop,
 		onGroupSelect: $.noop,
-		onLayerSelect: $.noop
+		onLayerSelect: $.noop,
+		startup: {}
 	};
 
 })(jQuery);

@@ -2,20 +2,8 @@
 	position: relative;
 }
 
-.pixel .carousel {
-	/*width: 400px;*/
-	/*height: 400px;*/
-	/*background: grey;*/
-}
-
 .pixel .carousel-inner {
 	height: 100%;
-}
-
-/***********************/
-
-.pixel .tabs .tab.active {
-	/*background: red;*/
 }
 
 /***********************/
@@ -23,21 +11,6 @@
 .pixel .layer {
 	overflow: hidden;
 	width: 100%;
-}
-
-.pixel .layer.active .tab {
-	/*background: red;*/
-}
-
-.pixel .layer .item {
-	/*width: 100px;*/
-	/*height: 100px;*/
-
-	/*float: left;*/
-}
-
-.pixel .layer .item.active {
-	/*outline: 1px solid #000;*/
 }
 
 .pixel .layer .item img {
