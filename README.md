@@ -3,9 +3,32 @@
 
 Pixel art picture generator. Create your own funny profile pics!
 
+How to use?
+========
+
+<a href="http://twitter.github.com/bootstrap/index.html">Twitter Bootstrap</a> is required.
+
+However, you can attach only things related to Carousel plugin (these files can be found along with others in 8bit-client directory).
+
+#### Attention
+You will need patched version of bootsrap-carousel.js.
+You can find patched version in 8bit-client/js/ or use 8bit-client/js/bootstrap-carousel.patch file to create your own.
+
+```html
+<link type="text/css" href="8bit-client/css/8biticon.css" rel="stylesheet" />
+<script src="8bit-client/js/bootstrap-carousel.patched.js"></script>
+```
+
+```html
+<link type="text/css" href="8bit-client/css/8biticon.css" rel="stylesheet" />
+
+<script src="8bit-client/js/waitForImages.js"></script>
+<script src="8bit-client/js/8biticon.js"></script>
+```
+
 ### Tabs
 ```html
-<div class="tabs">
+<div class="tabs"> <!-- .tabs will contain the list of generated .tab elements -->
   <div class="tab">
     <span class="tab-text"></span> <!-- .tab-text may be ommited, in that case layer name will be written directly to .tab -->
   </div>
@@ -16,17 +39,21 @@ Pixel art picture generator. Create your own funny profile pics!
 ```html
 <a href="javascript://" class="group-control" data-group="myGroup">Group Name</a> <!-- [data-group] contains the name of any group
 ```
-To change group 
+To change the group user must emmit "click" event on one of .group-control elements.
+No generations for group lists is supported now. 
 
 ### Navigation links
 ```html
-<a href="javascript://" class="layer-control" data-direction="prev">Go back</a> <!-- [data-direction] contains either "prev" or "next" -->
+<!-- [data-direction] contains either "prev" or "next" -->
+<a href="javascript://" class="layer-control" data-direction="prev">Go back</a> 
+<a href="javascript://" class="layer-control" data-direction="prev">Go ahead</a>
 ```
 
 ### Generate random picture link
 ```html
 <a href="javascript://" class="layers-regenerate">Generate random picture</a>
 ```
+Regeneration will pick random item from the every layer of the current group.
 
 ### Avatar viewport
 ```html
@@ -41,7 +68,7 @@ To change group
 ```html
 <div class="layers">
 	<div class="layer">
-		<div class="item"><span></span></div>
+		<div class="item"></div>
 	</div>
 </div>
 ```
