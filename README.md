@@ -98,7 +98,7 @@ After that you should add your stylesheet with some styles for your constructor.
 Add some javascript for everything to work.
 
 ```js
-$("#my-pixel-constructor").pixel({
+$("#my_8biticon").pixel({
 	images: '8bit-clent/img/', /// path to folder containing group folders with images
 	json: '8bit-client/js/8settings.json' // path to 8settings.json file
 });
