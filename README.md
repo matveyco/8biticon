@@ -17,18 +17,17 @@ You can find patched version in 8bit-client/js/ or use 8bit-client/js/bootstrap-
 <!-- twitter bootstrap related -->
 <link type="text/css" href="8bit-client/css/8biticon.css" rel="stylesheet" />
 <script src="8bit-client/js/bootstrap-carousel.patched.js"></script>
+<script src="8bit-client/js/bootstrap-transition.js"></script>
 ```
 
 ```html
 <!-- 8biticon mandatory css file -->
 <link type="text/css" href="8bit-client/css/8biticon.css" rel="stylesheet" />
 
-<!-- 8biticon uses waitForImages script provided by Alex Dickson -->
+<!-- 8biticon uses waitForImages script by Alex Dickson -->
 <script src="8bit-client/js/waitForImages.js"></script>
 <script src="8bit-client/js/8biticon.js"></script>
 ```
-
-After that you should add your stylesheet with some styles for your constructor. Example can be found in 8bit-client/example/css/ folder.
 
 Now you must prepare your html.
 
@@ -90,3 +89,17 @@ Regeneration will pick random item from the every layer of the current group.
 ```html
 <a href="javascript://" class="layers-regenerate">Generate random picture</a>
 ```
+
+##After that
+After that you should add your stylesheet with some styles for your constructor. Example can be found in 8bit-client/example/css/ folder.
+
+##Final step
+Add some javascript for everything to work.
+
+```js
+$("#my-pixel-constructor").pixel({
+	images: '8bit-clent/img/', /// path to folder containing group folders with images
+	json: '8bit-client/js/8settings.json' // path to 8settings.json file
+});
+```
+
