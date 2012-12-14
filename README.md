@@ -60,7 +60,7 @@ Represents result image for preview with all selected items of the every layer o
 ```
 
 ### Layer items list
-Represents pickable list of layer items. User can emmit "click" event on .item element in order for it to appear in viewport.
+Represents pickable list of layer items. User can emmit "click" event on .item element for it to appear in viewport.
 ```html
 <div class="layers">
 	<div class="layer"> <!-- this element gets cloned for every layer in the group -->
