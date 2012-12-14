@@ -6,7 +6,7 @@ Pixel art picture generator. Create your own funny profile pics!
 ### Tabs
 ```html
 <div class="tabs">
-	<div class="tab">
+  <div class="tab">
     <span class="tab-text"></span> <!-- .tab-text may be ommited, in that case layer name will be written directly to .tab -->
   </div>
 </div>
