@@ -38,7 +38,7 @@
 				layer_item = layer.find('.item').remove();
 
 			function openGroup(name) {
-				var layers_list = options.groups[name],
+				var layers_list = options.json[name],
 					v,
 					ld;
 
@@ -138,6 +138,8 @@
 					.carousel({ interval: false });
 
 				markLayerActive(name);
+
+				options.onLayerSelect.call(self, name);
 			}
 
 			function closeLayer () {
@@ -178,13 +180,13 @@
 				if (options.selected === true) {
 					options.selected = {};
 
-					for (group in options.groups) {
+					for (group in options.json) {
 						// don't iterate over inherited or smth
-						if (!options.groups.hasOwnProperty(group)) {
+						if (!options.json.hasOwnProperty(group)) {
 							continue;
 						}
 
-						layers_list = options.groups[group];
+						layers_list = options.json[group];
 
 						options.selected[group] = {};
 
@@ -204,13 +206,13 @@
 				$this.data('selected', options.selected);
 
 				// filling up all the things
-				for (group in options.groups) {
+				for (group in options.json) {
 					// don't iterate over inherited or smth
-					if (!options.groups.hasOwnProperty(group)) {
+					if (!options.json.hasOwnProperty(group)) {
 						continue;
 					}
 
-					layers_list = options.groups[group];
+					layers_list = options.json[group];
 
 					// do not interlink groups
 					p = null;
@@ -244,7 +246,8 @@
 							p = ld;
 
 							// sets selected item
-							sel = ld.name in options.selected[group] ? options.selected[group][ld.name] : -1;
+							sel = (group in options.selected) &&
+								(ld.name in options.selected[group]) ? options.selected[group][ld.name] : -1;
 
 							// cloning layer element
 							cl = layer.clone().data({
@@ -338,13 +341,6 @@
 							active = items.filter('.active'),
 							name = active.data('layer');
 
-							console.log("LOG")
-						items.each(function() {
-							console.log($(this).data())
-						})
-
-						console.log(items, active, active.data(), name);
-
 						markLayerActive(name);
 						markItemActive(name, items.index(active));
 					})
@@ -402,35 +398,36 @@
 					});
 			}
 
-			$.get(options.groups, function (groups) {
-				options.groups = groups;
+			$.get(options.json, function (groups) {
+				options.json = groups;
 
 				initConstructor();
 
+				$this.waitForImages(function () {
+					options.onLoaded.call(self, groups);
 
-				if (options.startup.group in options.groups) {
-					openGroup(options.startup.group);
-				}
+					if (options.startup.group in options.json) {
+						openGroup(options.startup.group);
+					}
 
-				if (options.startup.layer in hash_layers) {
-					openLayer(options.startup.layer);
-				}
-
-				options.ready.call(self, groups);
+					if (options.startup.layer in hash_layers) {
+						openLayer(options.startup.layer);
+					}
+				}, options.onLoading);
 			}, 'json');
 		});
 	};
 
 	$.fn.pixel.defaults = {
-		groups: null,
-//		layers: null,
+		json: null,
 		images: null,
-//		script: null,
 		selected: {},
 		ext: '.png',
 		zIndex: 1,
-		ready: $.noop,
-		onGroupSelect: $.noop
+		onLoaded: $.noop,
+		onLoading: $.noop,
+		onGroupSelect: $.noop,
+		onLayerSelect: $.noop
 	};
 
 })(jQuery);
