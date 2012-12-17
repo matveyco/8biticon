@@ -78,7 +78,7 @@ No generations for group lists is supported now. Note, this is optional if you h
 ```
 
 ### Navigation links (Optional)
-This elements move current leyer cursor to another layer (next or previous).
+This elements move current layer cursor to another layer (next or previous).
 ```html
 <!-- [data-direction] contains either "prev" or "next" -->
 <a href="javascript://" class="layer-control" data-direction="prev">Go back</a> 
