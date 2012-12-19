@@ -78,7 +78,7 @@ No generations for group lists is supported now. Note, this is optional if you h
 ```
 
 ### Navigation links (Optional)
-This elements move current leyer cursor to another layer (next or previous).
+This elements move current layer cursor to another layer (next or previous).
 ```html
 <!-- [data-direction] contains either "prev" or "next" -->
 <a href="javascript://" class="layer-control" data-direction="prev">Go back</a> 
@@ -98,7 +98,7 @@ After that you should add your stylesheet with some styles for your constructor.
 Add some javascript for everything to work.
 
 ```js
-$("#my-pixel-constructor").pixel({
+$("#my_8biticon").pixel({
 	images: '8bit-clent/img/', /// path to folder containing group folders with images
 	json: '8bit-client/js/8settings.json' // path to 8settings.json file
 });
