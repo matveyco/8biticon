@@ -1,18 +1,18 @@
 {
 	"male": [
-		{ "name": "eye", "title": "Eyes", "count": 16 },
-		{ "name": "hair", "title": "Hair", "count": 18 },
-		{ "name": "mouth", "title": "Mouth", "count": 11 },
-		{ "name": "clothes", "title": "Clothes", "count": 52 },
+		{ "name": "eye", "title": "Eyes", "count": 31 },
+		{ "name": "hair", "title": "Hair", "count": 31 },
+		{ "name": "mouth", "title": "Mouth", "count": 21 },
+		{ "name": "clothes", "title": "Clothes", "count": 62 },
 		{ "name": "face", "title": "Face", "count": 4 },
-		{ "name": "background", "title": "Background", "count": 20 }
+		{ "name": "background", "title": "Background", "count": 5 }
 		],
 	"female": [
-		{ "name": "eye", "title": "Eyes", "count": 42 },
-		{ "name": "head", "title": "Hair", "count": 23 },
-		{ "name": "mouth", "title": "Mouth", "count": 8 },
-		{ "name": "clothes", "title": "Clothes", "count": 49 },
+		{ "name": "eye", "title": "Eyes", "count": 53 },
+		{ "name": "head", "title": "Hair", "count": 33 },
+		{ "name": "mouth", "title": "Mouth", "count": 17 },
+		{ "name": "clothes", "title": "Clothes", "count": 59 },
 		{ "name": "face", "title": "Face", "count": 4 },
-		{ "name": "background", "title": "Background", "count": 20 }
+		{ "name": "background", "title": "Background", "count": 5 }
 	]
 }
