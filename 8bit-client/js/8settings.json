@@ -1,9 +1,9 @@
 {
 	"male": [
-		{ "name": "eye", "title": "Eyes", "count": 31 },
-		{ "name": "hair", "title": "Hair", "count": 31 },
-		{ "name": "mouth", "title": "Mouth", "count": 21 },
-		{ "name": "clothes", "title": "Clothes", "count": 62 },
+		{ "name": "eye", "title": "Eyes", "count": 32 },
+		{ "name": "hair", "title": "Hair", "count": 36 },
+		{ "name": "mouth", "title": "Mouth", "count": 26 },
+		{ "name": "clothes", "title": "Clothes", "count": 65 },
 		{ "name": "face", "title": "Face", "count": 4 },
 		{ "name": "background", "title": "Background", "count": 5 }
 		],
