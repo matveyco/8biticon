@@ -1,3 +1,14 @@
+.get-it {
+	height: 44px;
+	margin-right: 8px !important;
+}
+
+.get-it img {
+	height: 100%;
+}
+
+/***********************/
+
 .pixel {
 	position: relative;
 }
