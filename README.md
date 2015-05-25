@@ -99,7 +99,7 @@ Add some javascript for everything to work.
 
 ```js
 $("#my_8biticon").pixel({
-	images: '8bit-clent/img/', /// path to folder containing group folders with images
+	images: '8bit-client/img/', /// path to folder containing group folders with images
 	json: '8bit-client/js/8settings.json' // path to 8settings.json file
 });
 ```
