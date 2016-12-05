@@ -1,0 +1,54 @@
+.get-it {
+	height: 44px;
+	margin-right: 8px !important;
+}
+
+.get-it img {
+	height: 100%;
+}
+
+/***********************/
+
+.pixel {
+	position: relative;
+}
+
+.pixel .carousel-inner {
+	height: 100%;
+}
+
+/***********************/
+
+.pixel .layer {
+	overflow: hidden;
+	width: 100%;
+}
+
+.pixel .layer .item img {
+	width: 100%;
+	height: 100%;
+}
+
+/***********************/
+
+.pixel .carousel .layer-item {
+	display: none;
+}
+
+.pixel .carousel .layer-active {
+	display: block;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.pixel .carousel .mask {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+/***********************/

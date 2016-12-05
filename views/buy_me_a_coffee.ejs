@@ -1,0 +1,43 @@
+
+<% include ./partials/header %>
+
+<link type="text/css" href="/static/css/donation.css" rel="stylesheet" />
+<script src="/static/javascripts/coin.js"></script>
+
+<% include ./partials/head %>
+
+<div id="wrapper">
+	<div id="donation-page">
+		<div class="width-setter">
+			<div id="donation-text">
+				<p>
+				8biticon.com is a quirky but little-known open-source project developed for everyone. It is completely free and has never been or will ever be monetized.
+				If you like the idea, feel free to chip in couple bucks, so we could find time to add more elements.
+				</p>
+				<p>
+				If we collect a significant amount of greenbacks we will definitely use it for good.
+				Right now we have an idea to create a stylish-pixelart-online-game. We'll see how it goes.
+				</p>
+			</div>
+
+			<div id="donation-form">
+				<script>
+					CoinWidgetCom.go({
+						wallet_address: "162DsVbQsdSr75mjBWN2ZhKdnM3n2nVY3k"
+						, currency: "bitcoin"
+						, counter: "count"
+						, alignment: "bl"
+						, qrcode: true
+						, auto_show: false
+						, lbl_button: "Donate"
+						, lbl_address: "My Bitcoin Address:"
+						, lbl_count: "donations"
+						, lbl_amount: "BTC"
+					});
+				</script>
+			</div>
+		</div>
+	</div>
+</div>
+
+<% include ./partials/footer %>

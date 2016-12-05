@@ -1,0 +1,14 @@
+#donation-page {
+	margin: 40px 0 0;
+}
+
+#donation-text {
+	margin: 0 0 20px;
+  	font-size: 18px;
+  	line-height: 1.4;
+}
+
+#donation-form {
+	margin: 15px auto;
+	text-align: center;
+}

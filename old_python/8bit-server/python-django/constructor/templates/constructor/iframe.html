@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>8biticon</title>
+
+	<link type="text/css" href="/static/css/base.css" rel="stylesheet" />
+	<link type="text/css" href="/static/css/styles.css" rel="stylesheet" />
+
+	<link type="text/css" href="/static/8bit/css/8biticon.css" rel="stylesheet" />
+	<link type="text/css" href="/static/css/index.css" rel="stylesheet" />
+	<link type="text/css" href="/static/fonts/fipps/stylesheet.css" rel="stylesheet" />
+
+	<style>
+		.width-setter {
+			width: 800px;
+		}
+	</style>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+	<script src="/static/javascripts/jquery.cookie.js"></script>
+
+	<script src="/static/8bit/js/waitForImages.js"></script>
+	<script src="/static/8bit/js/8biticon.js"></script>
+
+	<script src="/static/javascripts/bootstrap-modal.js"></script>
+	<script src="/static/javascripts/bootstrap-transition.js"></script>
+	<script src="/static/8bit/js/bootstrap-carousel.patched.js"></script>
+	<script src="http://vk.com/js/api/xd_connection.js?2" type="text/javascript"></script>
+</head>
+<body>
+
+<div id="wrapper">
+<div id="header">
+	<div class="width-setter">
+		<span class="heading">
+			8bit icon.com
+		</span>
+	</div>
+</div>
+
+<div id="constructor">
+	<div class="width-setter">
+		<div class="pixel-loading">
+			<div class="headline b">Loading <span class="percent"></span></div>
+			<div class="progress progress-striped active"><div class="bar"></div></div>
+		</div>
+
+		<div id="constructor-panel" class="pixel">
+			<div class="viewport">
+				<div class="viewport-col modal-col">
+					<div class="carousel slide">
+						<div class="carousel-inner">
+							<div class="item"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div style="text-align: center;">
+				<div class="btn-group">
+					<button class="btn btn-large btn-primary" id="set-vk-avatar" disabled>Set as profile image</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	{% csrf_token %}
+</div>
+<script type="text/javascript">
+jQuery(function ($) {
+	var selected = true, group = 'male';
+
+	var constructor = $("#constructor-panel"),
+		loader = $(".pixel-loading");
+
+	VK.addCallback('onLocationChanged', function (string) {
+		try {
+			var parsed = JSON.parse(string);
+			selected = parsed.selected;
+			group = parsed.group;
+		} catch(e) {}
+
+		constructor.pixel({
+			images: '/static/8bit/img/',
+			json: '/static/8bit/js/8settings.json',
+			selected: selected,
+			startup: {
+				layer: 'background',
+				group: group
+			},
+			onLoaded: function () {
+				constructor.show();
+				loader.hide();
+			},
+			onLoading: function (loaded, length) {
+				var perc = Math.ceil(100 * loaded / length);
+
+				loader.find('.headline span').text(perc + '%').end()
+					.find('.bar').width(perc + '%');
+			},
+			onLayerSelect: function () {
+
+			},
+			onGroupSelect: function () {
+
+			}
+		});
+	});
+
+	var starter;
+
+	VK.addCallback('onSettingsChanged', { settings: 4 }, starter = function () {
+		$("#set-vk-avatar").on('click', function () {
+			var self = $(this);
+
+			VK.api('photos.getProfileUploadServer', {}, function (data) {
+				if (!data.response) {
+					return;
+				}
+
+				$.post('{% url 8bit_set_vk %}', {
+					'upload_url': data.response.upload_url,
+					'gender': constructor.pixel('group'),
+					'data': JSON.stringify(constructor.pixel('selected')),
+					'csrfmiddlewaretoken': $.cookie('csrftoken')
+				},  function (json) {
+					console.log('Photo upload response: ', json);
+					VK.api("photos.saveProfilePhoto", { server: json.server, photo: json.photo, hash: json.hash }, function (data)  {
+						VK.callMethod("saveProfilePhoto", { photo_hash: data.photo_hash }, function () {
+							console.log('DONE');
+						});
+
+						console.log('saveProfilePhoto results in ', data);
+					});
+				}, 'json').error(function(jqXHR, textStatus, errorThrown) { alert(textStatus); });
+			});
+		}).removeAttr('disabled');
+
+
+	});
+
+	VK.init(function initback() {
+		VK.api('getUserSettings', {}, function (data) {
+			if(data.response & 4) {
+				starter();
+			} else {
+				VK.callMethod('showSettingsBox', 4);
+			}
+		});
+	});
+});
+</script>
+<script>
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-36938395-1']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+</script>
+</div>
+</body>
+</html>

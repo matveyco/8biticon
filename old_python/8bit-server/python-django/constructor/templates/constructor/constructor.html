@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>8biticon</title>
+
+	<link type="image/png" rel="icon" href="/static/images/index/favicon.jpg" />
+
+	<link type="text/css" href="/static/css/base.css" rel="stylesheet" />
+	<link type="text/css" href="/static/css/styles.css" rel="stylesheet" />
+
+	<link type="text/css" href="/static/8bit/css/8biticon.css" rel="stylesheet" />
+	<link type="text/css" href="/static/css/index.css" rel="stylesheet" />
+	<link type="text/css" href="/static/fonts/fipps/stylesheet.css" rel="stylesheet" />
+
+	<link type="text/css" href="/static/external/jscrollpane/style/jquery.jscrollpane.css" rel="stylesheet" media="all" />
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+	<script src="/static/javascripts/jquery.cookie.js"></script>
+{#	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>#}
+
+	<script src="/static/8bit/js/waitForImages.js"></script>
+	<script src="/static/8bit/js/8biticon.js"></script>
+
+	<script type="text/javascript" src="/static/external/jscrollpane/script/jquery.mousewheel.js"></script>
+	<script type="text/javascript" src="/static/external/jscrollpane/script/jquery.jscrollpane.min.js"></script>
+
+	<script src="/static/javascripts/bootstrap-modal.js"></script>
+	<script src="/static/javascripts/bootstrap-dropdown.js"></script>
+	<script src="/static/javascripts/bootstrap-transition.js"></script>
+	<script src="/static/8bit/js/bootstrap-carousel.patched.js"></script>
+
+
+	<!-- Put this script tag to the <head> of your page -->
+	<script src="//vk.com/js/api/openapi.js?63"></script>
+	<script>
+		VK.init({apiId: {{ VK_APP_ID }}, onlyWidgets: true});
+	</script>
+
+	<!-- Place this tag in your head or just before your close body tag. -->
+	<script src="https://apis.google.com/js/plusone.js">
+		{lang: 'ru'}
+	</script>
+
+</head>
+<body>
+<div id="fb-root"></div>
+<script>
+    // Additional JS functions here
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '{{ FB_APP_ID }}', // App ID
+            channelUrl : '//8biticon.com/channel.html', // Channel File
+            status     : true, // check login status
+            cookie     : true, // enable cookies to allow the server to access the session
+            xfbml      : true  // parse XFBML
+        });
+    };
+
+    // Load the SDK Asynchronously
+    (function(d){
+        var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement('script'); js.id = id; js.async = true;
+        js.src = "//connect.facebook.net/ru_RU/all.js";
+        ref.parentNode.insertBefore(js, ref);
+    }(document));
+</script>
+
+<div id="facebookModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="facebookModalLabel1" aria-hidden="true">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		<h3 id="myModalLabel">AHTUNG!</h3>
+	</div>
+	<div class="modal-body">
+		<p>Please, click <a href="javascript://" target="_blank" class="link">here</a> in order to complete setup.</p>
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Okay</button>
+	</div>
+</div>
+
+<div id="wrapper">
+	<div id="header">
+		<div class="width-setter">
+			<a href="https://github.com/matveyco/8biticon" target="_blank" class="btn btn-primary btn-large pull-right">
+				Get those sources fast!
+			</a>
+
+			<a href="https://play.google.com/store/apps/details?id=com.mgrach.eightbiticon&amp;utm_source=8biticon.com" target="_blank" class="get-it pull-right">
+				<img alt="Get it on Google Play" src="https://developer.android.com/images/brand/en_generic_rgb_wo_60.png">
+			</a>
+
+			<span class="heading">
+				8bit icon.com
+			</span>
+		</div>
+	</div>
+
+	<div id="constructor">
+		<div class="width-setter">
+			<div class="page-header" style="margin: 40px 50px 0;">
+				<h1>Pixel art icon constructor <small>Customizable avatars for everyone.</small></h1>
+			</div>
+
+			<div class="pixel-loading">
+				<div class="headline b">Loading <span class="percent"></span></div>
+				<div class="progress progress-striped active"><div class="bar"></div></div>
+			</div>
+
+			<div id="constructor-panel" class="pixel">
+				<div class="viewport">
+					<div class="viewport-col modal-col">
+						<div class="carousel slide">
+							<a href="javascript://" class="layers-regenerate underdash">Generate random image</a>
+
+							<div class="carousel-inner">
+								<div class="item"></div>
+							</div>
+						</div>
+					</div>
+					<div class="viewport-col scrollee-col">
+						<div class="groups pull-left"><a href="javascript://" class="group-control" data-group="male"><img src="/static/images/constructor/male.png" title="Male" /></a> <a href="javascript://" class="group-control" data-group="female"><img src="/static/images/constructor/female.png" title="Female" /></a></div>
+
+						<div class="tabs-bar">
+							<ul class="nav nav-pills tabs">
+								<li class="tab"><a href="javascript://" class="tab-text"></a></li>
+							</ul>
+						</div>
+
+						<div class="layers">
+							<div class="layer" style="height: 330px; max-width: 470px;">
+								<div class="item"><span></span></div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+				<div style="text-align: center;">
+					<div class="btn-group">
+						<button class="btn btn-large btn-primary" id="constructor-download-avatar">Download this image</button>
+						<button class="btn btn-large btn-primary" id="set-vk-avatar">
+							Set as avatar in VK.com
+						</button>
+						<button class="btn btn-large btn-primary" id="set-fb-avatar">
+							Set as avatar in Facebook
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+        {% csrf_token %}
+	</div>
+	<script type="text/javascript">
+		jQuery(function ($) {
+			var group = 'male';
+
+			var constructor = $("#constructor-panel"),
+					loader = $(".pixel-loading");
+
+			constructor.pixel({
+				images: '/static/8bit/img/',
+				json: '/static/8bit/js/8settings.json',
+				selected: true,
+				startup: {
+					layer: 'background',
+					group: group
+				},
+				onLoaded: function () {
+					constructor.show();
+					loader.hide();
+				},
+				onLoading: function (loaded, length) {
+					var perc = Math.ceil(100 * loaded / length);
+
+					loader.find('.headline span').text(perc + '%').end()
+						.find('.bar').width(perc + '%');
+				},
+				onLayerSelect: function () {
+					constructor.find('.layers .layer').jScrollPane();
+				},
+				onGroupSelect: function () {
+					var $this = $(this),
+							tabs = $this.find('.tabs .tab'),
+							visible = tabs;
+
+					tabs.removeClass('first last')
+							.filter(':not(.hidden-group)')
+							.first().addClass('first').end()
+							.last().addClass('last').end()
+							.filter(':not(:first)').addClass('not-first');
+				}
+			});
+
+			$("#constructor-download-avatar").on('click', function(e) {
+				$("#constructor-frame, #constructor-form").remove();
+
+				var data = constructor.pixel('selected'),
+						iframe = $('<iframe />').attr({
+							src: 'about:blank',
+							id: 'constructor-frame',
+							name: 'iframe-' + $.now()
+						}).hide(),
+						form = $('<form />').hide()
+								.attr({
+									action: '/constructor/download/',
+									target: iframe.attr('name'),
+									id: 'constructor-form',
+									method: 'POST'
+								}),
+						token = $('<input type="hidden" />').attr({
+							name: 'csrfmiddlewaretoken',
+							value: $.cookie('csrftoken')
+						}),
+						encoded = $('<input type="hidden" />').attr({
+							name: 'data',
+							value: JSON.stringify(data)
+						}),
+						gender = $('<input type="hidden" />').attr({
+							name: 'gender',
+							value: constructor.pixel('group')
+						});
+
+				form.append(token).append(encoded).append(gender);
+				form.add(iframe).appendTo(constructor);
+				form.submit();
+			});
+
+			$("#set-vk-avatar").on('click', function () {
+				var self = $(this),
+						group = constructor.pixel('group'),
+						selected = {};
+
+				selected[group] = constructor.pixel('selected');
+
+				window.open('http://vk.com/app3291833#' + JSON.stringify({
+					'group': group,
+					'selected': selected
+				}));
+			});
+
+			var fb_window;
+
+            $("#set-fb-avatar").on('click', function () {
+	            fb_window = window.open();
+	            fb_window.document.body.innerText = 'Loading...';
+
+                FB.getLoginStatus(function(response) {
+                    if (response.status === 'connected') {
+                        // connected
+                        post_to_fb(response.authResponse.accessToken);
+                    } else if (response.status === 'not_authorized') {
+                        // not_authorized
+                        fb_login();
+                    } else {
+                        // not_logged_in
+                        fb_login();
+                    }
+                });
+            });
+
+            function fb_login() {
+                FB.login(function(response) {
+                    if (response.authResponse) {
+                        // connected
+                        post_to_fb(response.authResponse.accessToken);
+                    }
+                }, {scope: 'publish_stream'});
+            }
+
+            function post_to_fb(token){
+                $.post('{% url 8bit_set_fb %}', {
+                    'token': token,
+                    'gender': constructor.pixel('group'),
+                    'data': JSON.stringify(constructor.pixel('selected')),
+                    'csrfmiddlewaretoken': $.cookie('csrftoken')
+                },  function (json) {
+	                fb_window.location.href = 'http://www.facebook.com/photo.php?fbid=' + json.id + '&makeprofile=1#openthispage';
+	                fb_window.focus();
+                }, 'json').error(function(e, xhr) { alert(xhr.responseText); });
+            }
+		});
+
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-36938395-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+    </script>
+</div>
+<div id="footer">
+	<div class="width-setter">
+		<div id="footer-text">
+			<div class="pull-right">Btw, developed and assembled at <a href="http://plasticjam.com/">Plastic Jam</a></div>
+			<div>If you need any further information please do not hesitate contacting <a href="mailto:matvey@plasticjam.com">matvey@plasticjam.com</a></div>
+			<div class="like-buttons">
+				<!-- Put this div tag to the place, where the Like block will be -->
+				<div id="vk_like"></div>
+				<script type="text/javascript">
+					VK.Widgets.Like("vk_like", {type: "mini"});
+				</script>
+
+				<div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
+
+				<a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-hashtags="studyjam">Твитнуть</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+				<!-- Place this tag where you want the +1 button to render. -->
+				<div class="g-plusone" data-size="medium"></div>
+
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
