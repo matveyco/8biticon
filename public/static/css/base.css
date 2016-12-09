@@ -2,12 +2,13 @@ html, body {
   height: 100%; }
 
 body {
-  background: url("../images/index/background1.png");
+  background: url("/static/images/bg.png");
+
   font-family: 'HeliosC';
   font-size: 14px; }
 
 .width-setter {
-  width: 1024px;
+  width: 1310px;
   margin: 0 auto; }
 
 @media only screen and (max-width: 1024px) {
@@ -21,19 +22,19 @@ body {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 0 0 180px; }
+  padding: 0 0 125px; }
 
 #header {
-  height: 60px;
+  height: 80px;
   background: #1b1b1b;
   color: #fff; }
   #header .heading {
-    color: #fff;
-    font-family: fippsregular;
-    font-size: 32px;
-    line-height: 56px; }
+    color: rgb(0, 190, 239);
+    font-family: 'DS Pixel Cyr', arial;
+    font-size: 28px;
+    line-height: 80px; }
   #header a {
-    margin: 8px 0 0; }
+    margin: 18px 0 0; }
 
 #footer {
   background: #181616;
@@ -42,10 +43,15 @@ body {
   height: 75px;
   border-top: 5px solid #abb3c0; }
 
+#footer-text a{
+  text-decoration: underline;
+}
+
 #footer-text {
   padding: 14px 0 10px;
-  color: #67707c;
-  font-size: 12px;
+  color: white;
+  font-size: 16px;
+  font-family: "MullerW00-Thin";
   line-height: 1.3; }
   #footer-text .like-buttons {
     margin: 10px 0 0;
@@ -61,9 +67,194 @@ a:hover {
 a.underdash {
   border-bottom: 1px dashed; }
   a.underdash:hover {
-    border: none; }
+     }
 
 a.underline {
   text-decoration: underline; }
   a.underline:hover {
     text-decoration: none; }
+
+
+@font-face {
+    font-family: 'DS Pixel Cyr';
+    font-style: normal;
+    font-weight: 400;
+    src: local('DS Pixel Cyr'), local('DSPixelCyr-Regular'),
+        url(/static/fonts/ds-pixel-cyr_d566fc98afd053b118ade8185ba651ac.woff) format('woff'),
+        url(/static/fonts/ds-pixel-cyr_d566fc98afd053b118ade8185ba651ac.ttf) format('truetype');
+}
+
+@font-face {font-family: "MullerW00-Regular";
+    src: url("/static/fonts/regular/daf2f572726b3bd31ae892672a2d2015.eot"); /* IE9*/
+    src: url("/static/fonts/regular/daf2f572726b3bd31ae892672a2d2015.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("/static/fonts/regular/daf2f572726b3bd31ae892672a2d2015.woff2") format("woff2"), /* chrome firefox */
+    url("/static/fonts/regular/daf2f572726b3bd31ae892672a2d2015.woff") format("woff"), /* chrome firefox */
+    url("/static/fonts/regular/daf2f572726b3bd31ae892672a2d2015.ttf") format("truetype"), /* chrome firefox opera Safari, Android, iOS 4.2+*/
+    url("/static/fonts/regular/daf2f572726b3bd31ae892672a2d2015.svg#MullerW00-Regular") format("svg"); /* iOS 4.1- */
+}
+
+@font-face {font-family: "MullerW00-Medium";
+    src: url("/static/fonts/medium/07e48c93433d6153e44f8601bbffc7d1.eot"); /* IE9*/
+    src: url("/static/fonts/medium/07e48c93433d6153e44f8601bbffc7d1.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("/static/fonts/medium/07e48c93433d6153e44f8601bbffc7d1.woff2") format("woff2"), /* chrome firefox */
+    url("/static/fonts/medium/07e48c93433d6153e44f8601bbffc7d1.woff") format("woff"), /* chrome firefox */
+    url("/static/fonts/medium/07e48c93433d6153e44f8601bbffc7d1.ttf") format("truetype"), /* chrome firefox opera Safari, Android, iOS 4.2+*/
+    url("/static/fonts/medium/07e48c93433d6153e44f8601bbffc7d1.svg#MullerW00-Medium") format("svg"); /* iOS 4.1- */
+}
+
+@font-face {font-family: "MullerW00-Thin";
+    src: url("/static/fonts/thin/cf78769f293b623eb90a66fc19a3306c.eot"); /* IE9*/
+    src: url("/static/fonts/thin/cf78769f293b623eb90a66fc19a3306c.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("/static/fonts/thin/cf78769f293b623eb90a66fc19a3306c.woff2") format("woff2"), /* chrome firefox */
+    url("/static/fonts/thin/cf78769f293b623eb90a66fc19a3306c.woff") format("woff"), /* chrome firefox */
+    url("/static/fonts/thin/cf78769f293b623eb90a66fc19a3306c.ttf") format("truetype"), /* chrome firefox opera Safari, Android, iOS 4.2+*/
+    url("/static/fonts/thin/cf78769f293b623eb90a66fc19a3306c.svg#MullerW00-Thin") format("svg"); /* iOS 4.1- */
+}
+
+@font-face {font-family: "MullerW00-UltraLight";
+    src: url("/static/fonts/ultralight/c14cb4a75d573d241bc83e3860d4e520.eot"); /* IE9*/
+    src: url("/static/fonts/ultralight/c14cb4a75d573d241bc83e3860d4e520.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("/static/fonts/ultralight/c14cb4a75d573d241bc83e3860d4e520.woff2") format("woff2"), /* chrome firefox */
+    url("/static/fonts/ultralight/c14cb4a75d573d241bc83e3860d4e520.woff") format("woff"), /* chrome firefox */
+    url("/static/fonts/ultralight/c14cb4a75d573d241bc83e3860d4e520.ttf") format("truetype"), /* chrome firefox opera Safari, Android, iOS 4.2+*/
+    url("/static/fonts/ultralight/c14cb4a75d573d241bc83e3860d4e520.svg#MullerW00-UltraLight") format("svg"); /* iOS 4.1- */
+}
+
+@font-face {font-family: "MullerW00-Light";
+    src: url("/static/fonts/light/ff58dca608a4f4a4596b592a1b9538a1.eot"); /* IE9*/
+    src: url("/static/fonts/light/ff58dca608a4f4a4596b592a1b9538a1.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("/static/fonts/light/ff58dca608a4f4a4596b592a1b9538a1.woff2") format("woff2"), /* chrome firefox */
+    url("/static/fonts/light/ff58dca608a4f4a4596b592a1b9538a1.woff") format("woff"), /* chrome firefox */
+    url("/static/fonts/light/ff58dca608a4f4a4596b592a1b9538a1.ttf") format("truetype"), /* chrome firefox opera Safari, Android, iOS 4.2+*/
+    url("/static/fonts/light/ff58dca608a4f4a4596b592a1b9538a1.svg#MullerW00-Light") format("svg"); /* iOS 4.1- */
+}
+
+.whitecolor {
+  color: white;
+}
+
+.butn {
+  background-color: rgb(2, 119, 189);
+  width: 168px;
+  height: 44px;
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+  line-height: 44px;
+  font-family: "MullerW00-Regular";
+  padding-left: 46px;
+  white-space: 1.2;
+  background-image: url('/static/images/mark-github.png');
+  background-repeat: no-repeat;
+  background-position: 12px 10px;
+}
+
+.malefemale {
+  margin-left: 261px;
+  height: 60px;
+}
+
+.group-control {
+  display: block;
+  border-width: 1px;
+  border-color: rgb(129, 129, 129);
+  border-style: solid;
+  background-color: rgba(255, 255, 255, 0.62);
+  width: 76px;
+  height: 59px;
+  float: left;
+}
+
+
+.male {
+  font-family: "MullerW00-Regular";
+  color: rgb(90, 90, 90);
+  font-size: 19px;
+  line-height: 59px;
+  padding-left: 59px;
+  background: url('/static/images/Md.png') no-repeat 33px 20px;
+  border-right-width: 0;
+}
+
+.female {
+  font-family: "MullerW00-Regular";
+  color: rgb(90, 90, 90);
+  font-size: 19px;
+  line-height: 59px;  
+  padding-left: 59px;
+  background: url('/static/images/Fd.png') no-repeat 33px 20px;
+}
+
+.focusedmale {
+   background-color: rgb(129, 129, 129);
+   color: white;
+   background-image: url('/static/images/M.png');
+}
+
+.focusedfemale {
+   background-color: rgb(129, 129, 129);
+   color: white;
+   background-image: url('/static/images/F.png');
+}
+
+.female:hover,
+.male:hover {
+  color:rgb(90, 90, 90);
+}
+
+.focusedfemale:hover,
+.focusedmale:hover {
+  color:white;
+}
+
+.somegoods {
+  float: right;
+  width: 298px;
+  height: 598px;
+  border-width: 1px;
+  border-color: rgb(129, 129, 129);
+  border-style: dashed;
+  background-color: rgba(184, 184, 184, 0.129);
+
+}
+
+.downbutton {
+  background-color: rgb(2, 119, 189);
+  width: 292px;
+  height: 64px;
+  margin-right: 23px;
+  border: 0;
+  font-family: "MullerW00-Light";
+  color: white;
+  font-size: 19px;
+  background-image: url('/static/images/Download.png');
+  background-repeat: no-repeat;
+  background-position: 17px 16px;
+  padding-left: 17px;
+}
+
+.fbset,
+.vkset {
+   width: 316px;
+   border: 1px solid rgb(2, 119, 189);
+   background-color: white;
+   color: rgb(0, 0, 0);
+   background-image: url('/static/images/vk.png');
+   background-position: 17px 22px;
+
+}
+
+.fbset {
+  background-image: url('/static/images/fb.png');
+  background-position: 17px 16px;
+}
+
+.buycoffee {
+  text-decoration: underline;
+}
+
+.cancelbutton {
+  background-color: rgb(2, 119, 189);
+  border: 0;
+  width: 90px;
+  height: 31px;
+}

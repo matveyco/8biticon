@@ -1,5 +1,5 @@
 #constructor {
-  margin: 20px 0; }
+  margin: -8px 0; }
   #constructor .pixel-loading {
     text-align: center;
     margin-top: 50px; }
@@ -9,33 +9,51 @@
       margin-top: 20px; }
   #constructor .page-header {
     overflow: hidden;
-    margin: 20px 50px 0; }
+    border-bottom: 1px solid;
+    border-color: rgba(0, 0, 0, 0.62);
+    height: 86px;
+    margin-bottom: 30px;
+    }
   #constructor .force-vader {
-    margin: 0 40px 0 0;
+    margin: 17px 40px 0 0;
     float: right;
-    width: 400px;
+    width: 200px;
     display: inline-block;
-    text-align: right; }
+    text-align: right; 
+    position: relative;}
     #constructor .force-vader .wisdom {
-      font-size: 23px;
-      color: #999; }
+      font-size: 16px;
+      color: rgb(0, 0, 0);
+      font-family: "MullerW00-UltraLight"; 
+      position: absolute;
+      left: 65px;
+      right: 14px;
+      top: 4px;
+      text-align: center;}
     #constructor .force-vader img {
       width: 35px;
       vertical-align: bottom;
-      padding: 0 0 0 5px; }
+      padding: 0 0 1px 5px; }
+
+    #constructor .force-vader .toldPic {
+      width: 150px;
+      vertical-align: top;
+      padding: 0 0 10px 5px; }      
+
 
 #constructor-panel {
-  display: none; }
+  display: none; 
+  width: 1000px;}
   #constructor-panel .viewport {
-    margin: 10px 0 0;
+    margin: 10px 0 30px;
     display: table;
     width: 100%; }
     #constructor-panel .viewport .viewport-col {
       display: table-cell;
       vertical-align: top; }
       #constructor-panel .viewport .viewport-col.modal-col {
-        width: 500px;
-        text-align: center; }
+        width: 450px;
+         }
   #constructor-panel .carousel {
     display: inline-block;
     width: 400px;
@@ -47,9 +65,9 @@
     #constructor-panel .layers .layer .item {
       display: inline-block;
       cursor: pointer;
-      width: 100px;
-      height: 100px;
-      margin: 0 10px 10px 0;
+      width: 116px;
+      height: 112px;
+      margin: 0 10px 9px 0;
       position: relative;
       /* ie */
       border: 1px solid black;
@@ -69,10 +87,10 @@
       #constructor-panel .layers .layer .item.active > span {
         display: inline-block; }
   #constructor-panel .tabs-bar {
-    margin: 0 0 10px; }
+    margin: 20px 0 22px; }
   #constructor-panel .groups {
     margin: 0 20px 0 0;
-    width: 40px;
+    width: 540px;
     text-align: center; }
     #constructor-panel .groups a {
       opacity: .5;
@@ -84,9 +102,21 @@
       #constructor-panel .groups a.active {
         opacity: 1; }
   #constructor-panel .layers-regenerate {
-    position: absolute;
-    left: 0;
-    top: -20px; }
+    display: block;
+    float: left;
+    background-image: url('/static/images/Refresh.png');
+    background-repeat: no-repeat;
+    background-position: 20px 21px;
+    display: block;
+    background-color: rgb(2, 119, 189);
+    width: 152px;
+    height: 60px;
+    font-size: 19px;
+    font-family: "MullerW00-Regular";
+    color: rgb(255, 255, 255);
+    line-height: 60px;
+    padding-left: 61px;
+    }
   #constructor-panel .hidden-group {
     display: none !important; }
 
@@ -94,7 +124,7 @@
   margin: 0; }
 
 #action-buttons {
-  text-align: center; }
+   }
   #action-buttons .btn.loading {
     background-image: url("../images/index/ajax-loader.gif");
     background-repeat: no-repeat;
@@ -103,7 +133,9 @@
 #buy-me-a-coffee {
   text-align: center;
   margin: 40px 0 0;
-  font-size: 20px; }
+  font-size: 20px; 
+font-family: "MullerW00-UltraLight";
+  }
 
 
 

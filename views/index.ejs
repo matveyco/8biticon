@@ -35,8 +35,9 @@
 				<h1>Pixel art icon constructor <small>Customizable avatars for everyone.</small></h1>
 
 				<div class="force-vader">
-					<span class="wisdom">May the Pixels be with you!</span>
 					<img src="/static/images/index/dart-vaider.png" title="Pixel art Darth Vader avatar" alt="Pixel art Darth Vader avatar" />
+					<img src="/static/images/told.png" class="toldPic">
+					<span class="wisdom">May the Pixels be with you!</span>
 				</div>
 			</div>
 
@@ -45,19 +46,30 @@
 				<div class="progress progress-striped active"><div class="bar"></div></div>
 			</div>
 
+
+			<div class="somegoods">
+				
+			</div>
+
 			<div id="constructor-panel" class="pixel">
 				<div class="viewport">
 					<div class="viewport-col modal-col">
 						<div class="carousel slide">
-							<a href="javascript://" class="layers-regenerate underdash">Generate random image</a>
-
 							<div class="carousel-inner">
 								<div class="item"></div>
 							</div>
 						</div>
 					</div>
 					<div class="viewport-col scrollee-col">
-						<div class="groups pull-left"><a href="javascript://" class="group-control" data-group="male"><img src="/static/images/constructor/male.png" title="Male" /></a> <a href="javascript://" class="group-control" data-group="female"><img src="/static/images/constructor/female.png" title="Female" /></a></div>
+						<div class="group">
+							<a href="javascript://" class="layers-regenerate underdash">Random image</a>
+
+							<div class="malefemale">
+								<a href="javascript://" class="group-control male focusedmale" data-group="male">Male</a>
+								<a href="javascript://" class="group-control female" data-group="female">Female</a>
+							</div>
+							
+						</div>
 
 						<div class="tabs-bar">
 							<ul class="nav nav-pills tabs">
@@ -66,7 +78,7 @@
 						</div>
 
 						<div class="layers">
-							<div class="layer" style="height: 330px; max-width: 470px;">
+							<div class="layer" style="height: 240px; max-width: 535px; ">
 								<div class="item"><span></span></div>
 							</div>
 						</div>
@@ -76,20 +88,22 @@
 
 				<div id="action-buttons">
 					<div class="btn-group">
-						<button class="btn btn-large btn-primary constructor-download-avatar" data-action="/constructor/download/">Download this image</button>
-						<button class="btn btn-large btn-primary" id="set-vk-avatar">
+						<button class="downbutton download" data-action="/constructor/download/">Download this image</button>
+						<button class="downbutton vkset" id="set-vk-avatar">
 							Set as avatar in VK.com
 						</button>
-						<button class="btn btn-large btn-primary" id="set-fb-avatar">
+						<button class="downbutton fbset" id="set-fb-avatar">
 							Set as avatar in Facebook
 						</button>
 					</div>
 				</div>
 
 				<div id="buy-me-a-coffee">
-					If you like your new look feel free to <a href="/buy_me_a_coffee">buy me a coffee</a> <img src="/static/images/index/coffee.png" />
+					If you like your new look feel free to <a href="/buy_me_a_coffee" class="buycoffee">buy me a coffee</a> <img src="/static/images/coffee.png" />
 				</div>
 			</div>
+
+
 		</div>
         <!-- csrf_token -->
 	</div>
@@ -102,7 +116,7 @@
 			<p>We've sent your picture. Now you only have to <a href="javascript://" target="_blank" class="link underline">click here</a> in order to complete setup.</p>
 		</div>
 		<div class="modal-footer">
-			<button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Cancel</button>
+			<button class="cancelbutton" data-dismiss="modal" aria-hidden="true">Cancel</button>
 		</div>
 	</div>
 	<script type="text/javascript">
@@ -146,7 +160,7 @@
 				}
 			});
 
-			$(".constructor-download-avatar").on('click', function(e) {
+			$(".download").on('click', function(e) {
 				var $self = $(this);
 				$self.addClass('loading');
 
@@ -253,6 +267,7 @@
 		})();
     </script>
 	<!-- endblock -->
+	<script src="/static/javascripts/creator.js"></script>
 </div>
 
 <% include ./partials/footer %>
