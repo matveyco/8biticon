@@ -47,7 +47,7 @@
 			</div>
 
 
-			<div class="somegoods">
+			<div class="somegoods" id="constructor-adc">
 				
 			</div>
 
@@ -124,6 +124,7 @@
 			var group = 'male';
 
 			var constructor = $("#constructor-panel"),
+				constructor2 = $("#constructor-adc"),
 					loader = $(".pixel-loading");
 
 			constructor.pixel({
@@ -136,9 +137,11 @@
 				},
 				onLoaded: function () {
 					constructor.show();
+					constructor2.show();
 					loader.hide();
 				},
 				onLoading: function (loaded, length) {
+					constructor2.hide();
 					var perc = Math.ceil(100 * loaded / length);
 
 					loader.find('.headline span').text(perc + '%').end()
