@@ -1,3 +1,11 @@
+.responsive {
+  display: none;
+}
+
+#footer-text div:first-child {
+  display: inline-block;
+}
+
 #constructor {
   margin: -8px 0; }
   #constructor .pixel-loading {
@@ -20,7 +28,11 @@
     width: 200px;
     display: inline-block;
     text-align: right; 
-    position: relative;}
+    position: relative;
+    background-image: url('/static/images/told.png');
+    background-repeat: no-repeat;
+    background-position: 48px 0px;
+    height: 65px;}
     #constructor .force-vader .wisdom {
       font-size: 16px;
       color: rgb(0, 0, 0);
@@ -33,7 +45,7 @@
     #constructor .force-vader img {
       width: 35px;
       vertical-align: bottom;
-      padding: 0 0 1px 5px; }
+      padding: 34px 158px 1px 5px; }
 
     #constructor .force-vader .toldPic {
       width: 150px;
@@ -160,4 +172,222 @@ font-family: "MullerW00-UltraLight";
 }
 footer {
     margin-top: 100px;
+}
+
+@media (max-width: 1200px) {
+    .somegoods {
+        display: none !important;
+    }   
+
+    .width-setter {
+      width: 98%;
+    }
+}
+
+@media (max-width: 1077px) {
+    .somegoods {
+        display: none !important;
+    }   
+
+    .width-setter {
+      width: 98%;
+    }
+
+    .get-it img {
+      display: none;
+    }
+
+    #constructor .page-header {
+      height: 191px;
+    }
+
+    h1 {
+      line-height: 65px;
+      font-size: 45px;
+      font-family: "MullerW00-Medium";
+      position: relative;
+      width: 100%;
+      margin-bottom: 30px;
+    }
+
+    h1 small {
+      position: absolute;
+      top: 46px;
+      left: 0;
+      margin-left: 0;
+      font-family: "MullerW00-Light";
+      font-size: 23px;
+      width: 100%;
+      letter-spacing: 8px;
+      line-height: 55px;
+    }
+
+    #constructor .force-vader {
+      float: left;
+      background-image: url('/static/images/told2.png');
+      width: 600px;
+      margin-left: 91px;
+    }
+
+    #constructor .force-vader img {
+      float: left;
+    }
+
+    #constructor .force-vader .wisdom {
+      font-size: 21px;
+      left: 36px;
+      top: 17px
+    }
+
+    .responsive {
+      display: block;
+    }
+
+
+    .notresponsive {
+      display: none;
+    }
+
+    .btn-group {
+      margin-left: 3%;
+      width: 40%;
+    }
+
+    .downbutton {
+      width: 263px;
+      height: 120px;
+      display: block;
+      margin-bottom: 20px;
+      width: 100%;
+      background-position: 18px 45px;
+    }
+    .vkset {
+      background-position: 13px 50px;
+    }
+
+    #constructor-panel {
+      width: 100%;
+    }
+
+  #constructor-panel .viewport .viewport-col.modal-col {
+    float: left;
+    width: 400px;
+  }
+
+  #constructor-panel .viewport .viewport-col {
+    display: block;
+  }
+
+  #constructor-panel .layers-regenerate {
+    width: 305px;
+    height: 101px; 
+    margin-right: 3%;
+    background-position: 35px 40px;   
+    padding-left: 95px;
+    line-height: 101px;
+    font-size: 30px;
+  } 
+
+  .malefemale  {
+    height: 101px;
+  }
+
+  .group-control{
+    height: 101px;
+    width: 19.3%;
+    background-position: 75px 23px;
+    line-height: 135px;
+  }
+
+  .female {
+    padding-left: 51px;
+  }
+
+  .layer {
+    max-width: 99% !important;
+    height: 280px !important;
+  }
+
+  .nav-pills > li > a  {
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+
+  .nav-pills > .active > a, .nav-pills > .active > a:hover { 
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+
+  #constructor-panel .layers .layer .item  {
+    width: 129px;
+    height: 129px;
+  }
+
+  .jspVerticalBar {
+    right: 7px !important;
+  }
+
+  .belowad {
+    width: 720px;
+    height: 89px;
+  border-width: 1px;
+  border-color: rgb(129, 129, 129);
+  border-style: dashed;
+  background-color: rgba(184, 184, 184, 0.129);    
+  margin: 0 auto;
+  margin-top: 33px;
+  }
+
+  .butn {
+    padding-right: 10px;
+  }
+
+  #footer-text div {
+    float: left;
+  } 
+
+  #footer {
+    height: 200px;
+  }  
+
+ #footer-text div:first-child {
+  width: 100%;
+  line-height: 58px;
+  border-bottom: 1px rgba(255, 255, 255, 0.2) dashed;
+  margin-left: -8px;
+  padding-left: 8px;
+ }
+
+ #footer-text div:nth-child(2) {
+  width: 100%;
+  line-height: 58px;
+  text-align: left;
+ }
+
+
+  #footer-text .pull-right a:first-child {
+    margin-right: 27%;
+  }
+
+  #vk_like {
+    border: none !important;
+  }
+
+  #footer-text .like-buttons {
+    width: 100%;
+  }  
+
+  #footer-text .like-buttons > div {
+    margin-right: 2%;
+    margin-top: -1px;   
+  }
+
+  #footer-text .like-buttons > iframe {
+    margin-right: 2%;
+  }
+
+  #header .heading  {
+    font-size: 39px;
+  }
+
 }
