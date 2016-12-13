@@ -12,6 +12,7 @@ RUN npm install
 
 # Bundle app source
 COPY . /usr/src/app
+RUN mkdir -p /usr/src/app/public/static/media
 
 EXPOSE 3000
 
