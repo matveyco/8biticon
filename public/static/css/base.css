@@ -65,7 +65,7 @@ a:hover {
   text-decoration: none !important; }
 
 a.underdash {
-  border-bottom: 1px dashed; }
+  }
   a.underdash:hover {
      }
 

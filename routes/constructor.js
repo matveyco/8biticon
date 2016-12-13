@@ -27,7 +27,7 @@ router.post('/download', function(req, res, next) {
 		});
 
 		command.push('-fill', 'white', '-draw', 'rectangle 0,388 400,400');
-		command.push('-fill', '#636363', '-pointsize', '10', '-draw', 'gravity NorthWest text 290,388 \'made by 8biticon.com\'');
+		command.push('-fill', '#636363', '-pointsize', '10', "-font", "DejaVu-Sans", '-draw', 'gravity NorthWest text 290,388 \'made by 8biticon.com\'');
 		command.push(output_image);
 
 		im.convert(command, function (err, stdout, stderr) {

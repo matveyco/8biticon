@@ -73,6 +73,7 @@
   #constructor-panel .layers .layer {
     display: none; }
     #constructor-panel .layers .layer.active {
+      outline: none;
       display: block; }
     #constructor-panel .layers .layer .item {
       display: inline-block;
@@ -128,6 +129,7 @@
     color: rgb(255, 255, 255);
     line-height: 60px;
     padding-left: 61px;
+    outline: none;
     }
   #constructor-panel .hidden-group {
     display: none !important; }
