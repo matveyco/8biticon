@@ -207,6 +207,7 @@ a.underline {
 }
 
 .somegoods {
+  display: none;
   float: right;
   width: 298px;
   height: 598px;
