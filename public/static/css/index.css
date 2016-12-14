@@ -176,6 +176,20 @@ footer {
     margin-top: 100px;
 }
 
+
+@media (max-width: 1325px) {
+    .somegoods {
+        width: 120px;
+        position: absolute;
+        right: 5%;        
+    }   
+
+    .width-setter {
+      width: 98%;
+    }
+}
+
+
 @media (max-width: 1200px) {
     .somegoods {
         display: none !important;

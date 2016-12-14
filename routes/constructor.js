@@ -35,7 +35,7 @@ router.post('/download', function(req, res, next) {
 				throw err;
 			}
 
-			res.download(output_image, 'download.jpg', function () {
+			res.download(output_image, '8biticon.jpg', function () {
 				fs.unlink(output_image);
 			});
 	});
