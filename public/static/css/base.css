@@ -209,13 +209,9 @@ a.underline {
 .somegoods {
   display: none;
   float: right;
-  width: 298px;
+  width: 300px;
   height: 598px;
-  border-width: 1px;
-  border-color: rgb(129, 129, 129);
-  border-style: dashed;
   background-color: rgba(184, 184, 184, 0.129);
-
 }
 
 .downbutton {
