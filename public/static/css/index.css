@@ -407,3 +407,61 @@ footer {
   }
 
 }
+
+
+@media (max-width: 763px) { 
+  h1 {
+    font-size: 31px;
+  }
+
+  h1 small {
+    font-size: 11px;
+  }
+
+  #constructor .force-vader {
+    display: none;
+  }
+
+  #constructor .page-header {
+      height: 107px;
+  }  
+
+  #constructor-panel .viewport .viewport-col.modal-col {
+    float: none;
+    margin: auto;
+  }  
+
+  .btn-group {
+    width: 400px;
+    margin-left: 0;
+  }  
+
+  #action-buttons {
+    text-align: center;
+  }
+
+  #constructor-panel .layers-regenerate  {
+    float: none;
+    margin: 0 auto;
+  }
+
+  .malefemale {
+    margin: auto;
+    margin-top: 20px;
+    width: 400px;
+  }
+
+  .group-control {
+    width: 143px
+  }
+
+  .nav-pills > li > a {
+    padding-right: 9px;
+    padding-left: 9px;
+  }  
+
+  .nav.tabs {
+    width: 500px;
+    margin: auto;
+  }
+}
