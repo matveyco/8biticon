@@ -189,7 +189,7 @@ footer {
         display: block !important;
         width: 160px;
         position: absolute;
-        right: 5%;        
+        right: 3%;        
     }  
     .somegoods300 {
       display: none !important;
@@ -474,5 +474,13 @@ footer {
   .nav.tabs {
     width: 500px;
     margin: auto;
+  }
+
+  #footer-text .pull-right a:first-child {
+    margin-right: 6%;
+  }  
+
+  #footer-text div:nth-child(2) {
+    line-height: 25px;
   }
 }
