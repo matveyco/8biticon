@@ -10,6 +10,10 @@
   display: none !important;
 }
 
+.submition {
+  cursor: pointer;
+}
+
 #constructor {
   margin: -8px 0; }
   #constructor .pixel-loading {
@@ -189,7 +193,7 @@ footer {
         display: block !important;
         width: 160px;
         position: absolute;
-        right: 3%;        
+        right: 4%;        
     }  
     .somegoods300 {
       display: none !important;
@@ -200,6 +204,11 @@ footer {
     }
 }
 
+@media (max-width: 1250px) {
+    .somegoods160 {
+      right: 2%;
+    }
+}
 
 @media (max-width: 1200px) {
     .somegoods {
@@ -363,6 +372,7 @@ footer {
   background-color: rgba(184, 184, 184, 0.129);    
   margin: 0 auto;
   margin-top: 33px;
+  display: none;
   }
 
   .butn {
@@ -379,7 +389,7 @@ footer {
 
  #footer-text div:first-child {
   width: 100%;
-  line-height: 58px;
+  line-height: 46px;
   border-bottom: 1px rgba(255, 255, 255, 0.2) dashed;
   margin-left: -8px;
   padding-left: 8px;
