@@ -31,6 +31,15 @@
   border: none;
 }
 
+.gameicon {
+  width: 42px;
+  margin-bottom: 5px;
+}
+
+.coffeetick {
+  width: 40px;
+}
+
 #constructor {
   margin: -8px 0; }
   #constructor .pixel-loading {

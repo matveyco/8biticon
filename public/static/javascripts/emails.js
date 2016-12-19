@@ -24,7 +24,11 @@ function sender() {
 				name: name};
 	$.post( "/emailswriter", data, function( data ) {
 	  if (data == 1) {
-	  	alert("Your e-mail was saved")
+	  	$('#emailfield').hide("fast");
+	  	$('.coffesubmiter').hide("fast");
+	  	$('#namefield').hide("fast", function () {
+	  		$('#compliete').show("slow")
+	  	});
 	  }
 	})
 }
