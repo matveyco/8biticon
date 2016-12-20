@@ -240,7 +240,7 @@
 
 			var socialModal = $("#socialModal");
 
-			$("#set-vk-avatar").on('click', function () {
+			$(".vkset").on('click', function () {
 				var self = $(this),
 						group = constructor.pixel('group'),
 						selected = {};
@@ -255,7 +255,7 @@
 				socialModal.find('.link').attr('href', link).end().modal();
 			});
 
-            $("#set-fb-avatar").on('click', function () {
+            $(".fbset").on('click', function () {
 	            var $self = $(this).addClass('loading');
 
                 FB.getLoginStatus(function(response) {
