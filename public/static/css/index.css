@@ -531,7 +531,7 @@ footer {
   }
 
   h1 {
-      font-size: 22px;
+      font-size: 21px;
   }  
 
   h1 small {
@@ -547,7 +547,7 @@ footer {
   }
 
   .nav-pills > .active > a,
-  .nav-pills > .active > a:hover {
+  .nav-pills > .active > a:hover   {
     padding-right: 4px;
     padding-left: 4px;
   }
