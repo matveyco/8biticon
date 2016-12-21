@@ -520,3 +520,25 @@ footer {
     line-height: 25px;
   }
 }
+
+@media (max-width: 480px) {  
+  #header .heading {
+      font-size: 23px;
+  }
+
+  .butn {
+    width: 152px;
+  }
+
+  h1 {
+      font-size: 22px;
+  }  
+
+  h1 small {
+    letter-spacing: 4px;
+  }
+
+  #constructor-panel .viewport {
+    display: block;
+  }
+}
