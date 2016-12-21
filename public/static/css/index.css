@@ -541,4 +541,14 @@ footer {
   #constructor-panel .viewport {
     display: block;
   }
+
+  .nav.tabs {
+    width: 100%;
+  }
+
+  .nav-pills > .active > a,
+  .nav-pills > .active > a:hover {
+    padding-right: 4px;
+    padding-left: 4px;
+  }
 }
