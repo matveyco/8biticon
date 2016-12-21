@@ -531,7 +531,7 @@ footer {
   }
 
   h1 {
-      font-size: 21px;
+      font-size: 21spx;
   }  
 
   h1 small {
@@ -551,4 +551,77 @@ footer {
     padding-right: 4px;
     padding-left: 4px;
   }
+}
+
+@media (max-width: 400px) { 
+  .butn {
+    width: 118px;
+    font-size: 11px;
+  }
+
+  #header .heading {
+      font-size: 21px;
+  }  
+
+  h1 {
+      font-size: 17px;
+  }  
+
+  h1 small {
+    letter-spacing: 2px;
+  }
+
+  #constructor-panel .carousel {
+      display: inline-block;
+      width: 100%;
+      height: 400px;
+  }  
+
+  #constructor-panel .viewport .viewport-col.modal-col {
+    width: 100%;
+  } 
+
+  .btn-group {
+    width: 100%;
+  } 
+
+  #constructor-panel .layers-regenerate  {
+    width: 76%;
+    padding-left: 24%;
+  }
+
+  .malefemale {
+    width: 100%;
+  }
+
+  .group-control {
+      width: 34%;
+  }  
+
+  .male {
+    padding-left: 16%;
+  }
+
+  .female {
+      padding-left: 15%;
+      background-position: 85px 23px;
+  }  
+}
+
+@media (max-width: 390px) { 
+  #constructor-panel .carousel {
+      height: 373px;
+  }  
+}
+
+@media (max-width: 370px) { 
+  #constructor-panel .carousel {
+      height: 343px;
+  }  
+}
+
+@media (max-width: 340px) { 
+  #constructor-panel .carousel {
+      height: 320px;
+  }  
 }
