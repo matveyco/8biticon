@@ -12,11 +12,6 @@ router.get('/', function(req, res, next) {
 router.get('/buy_me_a_coffee', function(req, res, next) {
   res.render('buy_me_a_coffee');
 });
-
-router.get('/vk_frame', function(req, res, next) {
-  res.render('iframe');
-});
-
 router.get('/privacy', function(req, res, next) {
   res.render('privacy');
 });
@@ -28,15 +23,15 @@ router.get('/terms', function(req, res, next) {
 router.post('/emailswriter', function(req, res, next) {
 	var body = req.body.name + ": " + req.body.email;
     fs.exists(file, function (exists) {
-        if(!exists) { 
-        	create(body); 
+        if(!exists) {
+        	create(body);
         	res.send('1')
         }
     	else {
     		rewrite(body, res);
     		res.send('1')
         }
-	}); 
+	});
 })
 
 function create(str){
