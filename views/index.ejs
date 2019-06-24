@@ -1,28 +1,6 @@
 <% include ./partials/header %>
 
 <body>
-<div id="fb-root"></div>
-<script>
-    // Additional JS functions here
-    window.fbAsyncInit = function() {
-        FB.init({
-            appId      : '114760462036527', // App ID
-            channelUrl : '//8biticon.com/channel.html', // Channel File
-            status     : true, // check login status
-            cookie     : true, // enable cookies to allow the server to access the session
-            xfbml      : true  // parse XFBML
-        });
-    };
-
-    // Load the SDK Asynchronously
-    (function(d){
-        var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-        if (d.getElementById(id)) {return;}
-        js = d.createElement('script'); js.id = id; js.async = true;
-        js.src = "//connect.facebook.net/ru_RU/all.js";
-        ref.parentNode.insertBefore(js, ref);
-    }(document));
-</script>
 
 <div id="wrapper">
 
@@ -68,7 +46,7 @@
 				<script>
 				(adsbygoogle = window.adsbygoogle || []).push({});
 				</script>
-			</div>			
+			</div>
 
 			<div id="constructor-panel" class="pixel">
 				<div class="viewport">
@@ -83,12 +61,6 @@
 				<div id="action-buttons" class="responsive">
 					<div class="btn-group">
 						<button class="downbutton download" data-action="/constructor/download/">Download this image</button>
-						<button class="downbutton vkset" id="set-vk-avatar">
-							Set as avatar in VK.com
-						</button>
-						<button class="downbutton fbset" id="set-fb-avatar">
-							Set as avatar in Facebook
-						</button>
 					</div>
 				</div>
 
@@ -101,7 +73,7 @@
 								<a href="javascript://" class="group-control male focusedmale" data-group="male">Male</a>
 								<a href="javascript://" class="group-control female" data-group="female">Female</a>
 							</div>
-							
+
 						</div>
 
 						<div class="tabs-bar">
@@ -122,12 +94,6 @@
 				<div id="action-buttons" class="notresponsive">
 					<div class="btn-group">
 						<button class="downbutton download" data-action="/constructor/download/">Download this image</button>
-						<button class="downbutton vkset" id="set-vk-avatar">
-							Set as avatar in VK.com
-						</button>
-						<button class="downbutton fbset" id="set-fb-avatar">
-							Set as avatar in Facebook
-						</button>
 					</div>
 				</div>
 
@@ -137,7 +103,7 @@
 				</div>
 
 				<div class="belowad response">
-					
+
 				</div>
 			</div>
 
@@ -145,24 +111,12 @@
 		</div>
         <!-- csrf_token -->
 	</div>
-	<div id="socialModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="socialModalLabel1" aria-hidden="true">
-		<div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-			<h3 id="myModalLabel">Almost there..</h3>
-		</div>
-		<div class="modal-body">
-			<p>We've sent your picture. Now you only have to <a href="javascript://" target="_blank" class="link underline">click here</a> in order to complete setup.</p>
-		</div>
-		<div class="modal-footer">
-			<button class="cancelbutton" data-dismiss="modal" aria-hidden="true">Cancel</button>
-		</div>
-	</div>
 	<script type="text/javascript">
 		jQuery(function ($) {
 			var group = 'male';
 
 			var constructor = $("#constructor-panel"),
-				constructor2 = $("#constructor-adc"),
+					constructor2 = $("#constructor-adc"),
 					loader = $(".pixel-loading");
 
 			constructor.pixel({
@@ -183,7 +137,7 @@
 					var perc = Math.ceil(100 * loaded / length);
 
 					loader.find('.headline span').text(perc + '%').end()
-						.find('.bar').width(perc + '%');
+							.find('.bar').width(perc + '%');
 				},
 				onLayerSelect: function () {
 					constructor.find('.layers .layer').jScrollPane();
@@ -201,7 +155,7 @@
 				}
 			});
 
-			$(".download").on('click', function(e) {
+			$(".download").on('click', function (e) {
 				var $self = $(this);
 				$self.addClass('loading');
 
@@ -212,7 +166,8 @@
 							src: 'about:blank',
 							id: 'constructor-frame',
 							name: 'iframe-' + $.now()
-						}).hide().on('load', function() { }),
+						}).hide().on('load', function () {
+						}),
 						form = $('<form />').hide()
 								.attr({
 									action: $self.data('action'),
@@ -238,65 +193,7 @@
 				form.submit();
 				$self.removeClass('loading');
 			});
-
-			var socialModal = $("#socialModal");
-
-			$(".vkset").on('click', function () {
-				var self = $(this),
-						group = constructor.pixel('group'),
-						selected = {};
-
-				selected[group] = constructor.pixel('selected');
-
-				var link = 'http://vk.com/app3291833#' + JSON.stringify({
-					'group': group,
-					'selected': selected
-				});
-
-				socialModal.find('.link').attr('href', link).end().modal();
-			});
-
-            $(".fbset").on('click', function () {
-	            var $self = $(this).addClass('loading');
-
-                FB.getLoginStatus(function(response) {
-                    if (response.status === 'connected') {
-                        // connected
-                        post_to_fb(response.authResponse.accessToken);
-                    } else if (response.status === 'not_authorized') {
-                        // not_authorized
-                        fb_login();
-                    } else {
-                        // not_logged_in
-                        fb_login();
-                    }
-                });
-            });
-
-            function fb_login() {
-                FB.login(function(response) {
-                    if (response.authResponse) {
-                        // connected
-                        post_to_fb(response.authResponse.accessToken);
-                    }
-                }, {scope: 'publish_stream'});
-            }
-
-            function post_to_fb(token, $self){
-                $.post('<!-- url "8bit_set_fb" -->', {
-                    'token': token,
-                    'gender': constructor.pixel('group'),
-                    'data': JSON.stringify(constructor.pixel('selected')),
-                    'csrfmiddlewaretoken': $.cookie('csrftoken')
-                },  function (json) {
-	                var link = 'http://www.facebook.com/photo.php?fbid=' + json.id + '&makeprofile=1#openthispage';
-
-	                socialModal.find('.link').attr('href', link).end().modal();
-	                $("#set-fb-avatar").removeClass('loading');
-                }, 'json').error(function(e, xhr) { alert(xhr.responseText); });
-            }
 		});
-
 		var _gaq = _gaq || [];
 		_gaq.push(['_setAccount', 'UA-36938395-1']);
 		_gaq.push(['_trackPageview']);
