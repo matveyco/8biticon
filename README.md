@@ -3,7 +3,7 @@
 
 Pixel art picture generator. Create your own funny profile pics!
 
-#How to use?
+# How to use?
 
 <a href="http://jquery.com/">jQuery</a> and <a href="http://twitter.github.com/bootstrap/index.html">Twitter Bootstrap</a> are required.
 
@@ -32,7 +32,7 @@ You can find patched version in 8bit-client/external/bootstrap/ or use 8bit-clie
 
 Now you must prepare your html.
 
-##What can be used in constructor?
+## What can be used in constructor?
 You must create an element with .pixel class. For instance,
 ```html
 <div id="my_8biticon" class="pixel"></div>
@@ -91,10 +91,10 @@ Regeneration will pick random item from the every layer of the current group.
 <a href="javascript://" class="layers-regenerate">Generate random picture</a>
 ```
 
-##After that
+## After that
 After that you should add your stylesheet with some styles for your constructor. Example can be found in 8bit-client/example/css/ folder.
 
-##Final step
+## Final step
 Add some javascript for everything to work.
 
 ```js
@@ -104,6 +104,6 @@ $("#my_8biticon").pixel({
 });
 ```
 
-##Python version
+## Python version
 You can get old Python version inside the folder old_python.
 
